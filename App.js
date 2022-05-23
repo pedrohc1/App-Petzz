@@ -9,6 +9,11 @@ import PasswordScreen from "./src/screens/PasswordScreen";
 import CustomDrawer from "./src/components/CustomDrawer";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { LogBox } from "react-native";
+
+LogBox.ignoreLogs([
+	"ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from 'deprecated-react-native-prop-types",
+]);
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -21,10 +26,15 @@ function DrawerRoutes() {
 			screenOptions={{
 				drawerActiveBackgroundColor: "#3f223b",
 				drawerActiveTintColor: "#fff",
+				headerTintColor: "#fff",
+				headerStyle: {
+					backgroundColor: "#3f223b",
+				},
 			}}
 		>
 			<Drawer.Screen
 				name="Menu"
+				backgroundColor={"black"}
 				component={HomeScreen}
 				options={{
 					drawerIcon: ({ color }) => (
@@ -81,18 +91,5 @@ export default function App() {
 				</Stack.Navigator>
 			}
 		</NavigationContainer>
-	);
-
-	isSignedIn ? (
-		<>
-			<Stack.Screen name="Home" component={HomeScreen} />
-			<Stack.Screen name="Profile" component={ProfileScreen} />
-			<Stack.Screen name="Settings" component={SettingsScreen} />
-		</>
-	) : (
-		<>
-			<Stack.Screen name="SignIn" component={SignInScreen} />
-			<Stack.Screen name="SignUp" component={SignUpScreen} />
-		</>
 	);
 }

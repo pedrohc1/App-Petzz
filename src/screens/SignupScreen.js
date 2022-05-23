@@ -12,7 +12,7 @@ import {
 
 const SignupScreen = ({ navigation }) => {
 	return (
-		<KeyboardAvoidingView style={styles.container}>
+		<KeyboardAvoidingView style={styles.container} behavior="padding">
 			<Image style={styles.image} source={require("../../assets/petbox.png")} />
 
 			<TextInput

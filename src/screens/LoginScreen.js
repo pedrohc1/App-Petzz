@@ -17,18 +17,21 @@ import { heightToDp, widthToDp } from "../components/dimensions";
 const LoginScreen = ({ navigation }) => {
 	const { passwordVisibility, rightIcon, handlePasswordVisibility } =
 		useTogglePasswordVisibility();
+	const [login, setLogin] = useState("");
 	const [password, setPassword] = useState("");
 
 	return (
-		<SafeAreaView style={styles.container}>
+		<KeyboardAvoidingView style={styles.container} behavior="padding">
 			<View>
 				<Image style={styles.image} source={require("../../assets/Cat.png")} />
 
 				<TextInput
 					style={styles.login}
 					placeholder="Login"
+					value={login}
 					placeholderTextColor={"black"}
 					autoCorrect={false}
+					onChangeText={(text) => setLogin(text)}
 				/>
 				<View style={styles.inputContainer}>
 					<TextInput
@@ -71,7 +74,7 @@ const LoginScreen = ({ navigation }) => {
 					</Text>
 				</View>
 			</View>
-		</SafeAreaView>
+		</KeyboardAvoidingView>
 	);
 };
 
@@ -102,7 +105,7 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		alignItems: "center",
-		backgroundColor: "#e06f2f",
+		backgroundColor: "#FF6600",
 		marginHorizontal: 40,
 		padding: 10,
 		borderRadius: 5,
@@ -115,11 +118,11 @@ const styles = StyleSheet.create({
 	},
 	subtitle: {
 		color: "white",
-		marginTop: 100,
+		marginTop: 130,
 		alignSelf: "center",
 	},
 	signup: {
-		color: "#e06f2f",
+		color: "#FF6600",
 		alignSelf: "center",
 		fontWeight: "bold",
 	},
@@ -131,7 +134,7 @@ const styles = StyleSheet.create({
 	},
 	icon: {
 		position: "absolute",
-		left: 320,
+		left: 340,
 		bottom: 22,
 	},
 	loginbutton: {
