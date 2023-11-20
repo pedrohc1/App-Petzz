@@ -15,10 +15,6 @@ Atualmente fazendo um app do zero em React-Native utilizando expo e react naviga
 <img src="https://github.com/pedrohc1/App-Petzz/assets/86142962/06267ede-764d-4ff7-b771-935dfa076a3f"
     width=300px
      heigth=auto>
-<img src="https://github.com/pedrohc1/App-Petzz/assets/86142962/abdf56bc-deb5-4ac1-93fd-a76122c21d18"
-    width=300px
-     heigth=auto>
-
 <img src="https://github.com/pedrohc1/App-Petzz/assets/86142962/7216b029-bdc5-4c6c-818a-21db42764603"
-    width=290px
+    width=300px
      heigth=auto>
